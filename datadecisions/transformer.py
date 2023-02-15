@@ -17,8 +17,10 @@ class MultiRewardTransformerModel(DecisionTransformerModel):
         action_targets = action_targets.reshape(-1, act_dim)[attention_mask.reshape(-1) > 0]
         output['loss'] = torch.mean((action_preds - action_targets) ** 2)
         return output
+Model = MultiRewardTransformerModel
 
 class MultiRewardTransformerConfig(DecisionTransformerConfig):
     def __init__(self, reward_dim=1, **kpwarams):
         self.reward_dim = reward_dim
         super().__init__(**kwparams)
+Config = MultiRewardTransformerConfig
