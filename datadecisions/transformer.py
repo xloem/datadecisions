@@ -20,5 +20,5 @@ class MultiRewardTransformerModel(DecisionTransformerModel):
 
 class MultiRewardTransformerConfig(DecisionTransformerConfig):
     def __init__(self, reward_dim=1, **kpwarams):
-        super().__init__(**kwparams)
         self.reward_dim = reward_dim
+        super().__init__(**kwparams)
