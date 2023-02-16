@@ -24,4 +24,4 @@ They need only implement `__getitem__` and `__len__` and items can be tuples or 
 
 Contrariwise the DataLoader selects and batches items together for training.
 
-Judging by the tutorial example, there's a reasonable chance that each subitem is stacked into a batch and forwarded as a named or ordered parameter directly to the model's `.forward` function.
+Judging by the tutorial example, there's a reasonable chance that each subitem is stacked into a batch and forwarded as a named or ordered parameter directly to the model's `.forward` function. The dt signature is `states=None, actions=None, returns_to_go=None, timesteps=None, attention_mask=None`. All are scalars passed through linear layers except `timesteps` which by default selects from an embedding array of dimension `config.max_ep_len`.
