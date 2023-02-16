@@ -6,4 +6,11 @@ class TransformerDecisions:
   @classmethod
   def create(cls, observations, actions, rewards=1, steps=4096, embeds=128, heads=1, layers=3):
     return cls(Model(Config(
+        state_dim=observations,
+        act_dim=actions,
+        reward_dim=rewards,
+        hidden_size=embeds,
+        max_ep_len=steps,
+        n_layer=layers,
+        n_head=heads,
     )))
