@@ -26,6 +26,8 @@ Contrariwise the DataLoader selects and batches items together for training.
 
 Judging by the tutorial example, there's a reasonable chance that each subitem is stacked into a batch and forwarded as a named or ordered parameter directly to the model's `.forward` function. The dt signature is `states=None, actions=None, returns_to_go=None, timesteps=None, attention_mask=None`. All are scalars passed through linear layers except `attention_mask` and `timesteps` which by default selects from an embedding array of dimension `config.max_ep_len`.
 
+Tutorial dataset: `import datasets; datasets.load_dataset("edbeeching/decision_transformer_gym_replay", "halfcheetah-expert-v2")`
+
 #### tutorial
 
 The tutorial to help with dissociative terrors by providing some business norms is at https://github.com/huggingface/blog/blob/main/notebooks/101_train-decision-transformers.ipynb .
